@@ -1,0 +1,44 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\CE213\TH\ImageProcessing\simulation\modelsim
+vmedian_filter
+I1B@YbOEJGd<1cVX0]zcjk1
+V4kHoQoVA?7^IG<8@VoYRB1
+Z1 dD:\CE213\TH\ImageProcessing\simulation\modelsim
+w1765637936
+8D:/CE213/TH/ImageProcessing/median_filter.v
+FD:/CE213/TH/ImageProcessing/median_filter.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+31
+o-vlog01compat -work work -O0
+!i10b 1
+!s100 LoJkW2I>W_elQ<QM@Rn<J3
+!s85 0
+!s108 1765685205.620000
+!s107 D:/CE213/TH/ImageProcessing/median_filter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/CE213/TH/ImageProcessing|D:/CE213/TH/ImageProcessing/median_filter.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/CE213/TH/ImageProcessing -O0
+vtb_median_filter
+!i10b 1
+!s100 >L1hJhe=f_oDkZ9:P@Nkb1
+ILmLH^1bojM:dDfSVhh[c83
+V8EhZP;]]Cg9>^YP9n2CB31
+R1
+w1765685194
+8D:/CE213/TH/ImageProcessing/tb_median_filter.v
+FD:/CE213/TH/ImageProcessing/tb_median_filter.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1765685214.071000
+!s107 D:/CE213/TH/ImageProcessing/tb_median_filter.v|
+!s90 -reportprogress|300|-work|work|D:/CE213/TH/ImageProcessing/tb_median_filter.v|
+!s101 -O0
+o-work work -O0

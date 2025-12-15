@@ -1,0 +1,40 @@
+// File: image_to_grayscale.v
+// Description: Convert 8-bit RGB pixel to 8-bit grayscale using fixed-point luminance approximation.
+// Grayscale = (0.299 * R) + (0.587 * G) + (0.114 * B)
+// Approximation: (77*R + 150*G + 29*B) >> 8
+
+module image_to_grayscale (
+    input  wire        clk,        // optional for pipelining; used here to register output
+    input  wire        rst_n,      // active-low reset
+    input  wire [7:0]  r_in,       // Red channel (0-255)
+    input  wire [7:0]  g_in,       // Green channel (0-255)
+    input  wire [7:0]  b_in,       // Blue channel (0-255)
+    input  wire        in_valid,   // input pixel valid
+    output reg  [7:0]  gray_out,   // Grayscale output (0-255)
+    output reg         out_valid   // output valid (registered)
+);
+
+    // Use wider intermediates to avoid overflow during multiply-accumulate.
+    // 8-bit * 8-bit = 16-bit; sum fits in 18 bits before shift.
+    wire [15:0] r_mul = r_in * 8'd77;   // 0.299 * 256 ≈ 77
+    wire [15:0] g_mul = g_in * 8'd150;  // 0.587 * 256 ≈ 150
+    wire [15:0] b_mul = b_in * 8'd29;   // 0.114 * 256 ≈ 29
+
+    wire [17:0] acc = {2'b00, r_mul} + {2'b00, g_mul} + {2'b00, b_mul};
+
+    // Optional rounding: add 0.5 LSB before shifting
+    wire [17:0] acc_rounded = acc + 18'd128;
+
+    wire [7:0] gray_comb = acc_rounded[17:10]; // equivalent to >> 8 with rounding
+
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            gray_out  <= 8'd0;
+            out_valid <= 1'b0;
+        end else begin
+            gray_out  <= gray_comb;
+            out_valid <= in_valid;
+        end
+    end
+
+endmodule 

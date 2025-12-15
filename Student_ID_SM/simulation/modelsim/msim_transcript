@@ -1,0 +1,82 @@
+# Reading D:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Student_ID_SM_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/CE213/TH/Student_ID_SM {D:/CE213/TH/Student_ID_SM/fsm_student_ID.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module fsm_student_ID
+# 
+# Top level modules:
+# 	fsm_student_ID
+# 
+vlog -reportprogress 300 -work work D:/CE213/TH/Student_ID_SM/tb_fsm_student_ID.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_fsm_student_ID
+# 
+# Top level modules:
+# 	tb_fsm_student_ID
+vsim -voptargs=+acc work.tb_fsm_student_ID
+# vsim -voptargs=+acc work.tb_fsm_student_ID 
+# Loading work.tb_fsm_student_ID
+# Loading work.fsm_student_ID
+add wave -position end  sim:/tb_fsm_student_ID/user_input
+add wave -position end  sim:/tb_fsm_student_ID/clk
+add wave -position end  sim:/tb_fsm_student_ID/rst_n
+add wave -position end  sim:/tb_fsm_student_ID/user_input
+add wave -position end  sim:/tb_fsm_student_ID/start
+add wave -position end  sim:/tb_fsm_student_ID/active
+add wave -position end  sim:/tb_fsm_student_ID/done
+add wave -position end  sim:/tb_fsm_student_ID/out_digit
+run -all
+# === BAT DAU MO PHONG MSSV: 23520200 ===
+# Time:   0 ns | Active: x | State Output:  x | Done: x
+# Time:   5 ns | Active: 0 | State Output:  0 | Done: 0
+# 
+# --- [CASE 1] Input = 2. Expect: 2 -> 3 -> 5 -> 2 -> 0 -> 2 -> 0 -> 0 ---
+# Time:  35 ns | Active: 1 | State Output:  2 | Done: 0
+# Time:  45 ns | Active: 1 | State Output:  3 | Done: 0
+# Time:  55 ns | Active: 1 | State Output:  5 | Done: 0
+# Time:  65 ns | Active: 1 | State Output:  2 | Done: 0
+# Time:  75 ns | Active: 1 | State Output:  0 | Done: 0
+# Time:  85 ns | Active: 1 | State Output:  2 | Done: 0
+# Time:  95 ns | Active: 1 | State Output:  0 | Done: 0
+# Time: 105 ns | Active: 1 | State Output:  0 | Done: 1
+# Time: 115 ns | Active: 0 | State Output:  0 | Done: 0
+# 
+# --- [CASE 2] Input = 3. Expect: 3 -> 5 -> 2 -> 0 -> 2 -> 0 -> 0 ---
+# Time: 145 ns | Active: 1 | State Output:  3 | Done: 0
+# Time: 155 ns | Active: 1 | State Output:  5 | Done: 0
+# Time: 165 ns | Active: 1 | State Output:  2 | Done: 0
+# Time: 175 ns | Active: 1 | State Output:  0 | Done: 0
+# Time: 185 ns | Active: 1 | State Output:  2 | Done: 0
+# Time: 195 ns | Active: 1 | State Output:  0 | Done: 0
+# Time: 205 ns | Active: 1 | State Output:  0 | Done: 1
+# Time: 215 ns | Active: 0 | State Output:  0 | Done: 0
+# 
+# --- [CASE 3] Input = 0. Expect: 0 -> 2 -> 0 -> 2 -> 0 -> 0 ---
+# Time: 245 ns | Active: 1 | State Output:  0 | Done: 0
+# Time: 255 ns | Active: 1 | State Output:  2 | Done: 0
+# Time: 265 ns | Active: 1 | State Output:  0 | Done: 0
+# Time: 275 ns | Active: 1 | State Output:  0 | Done: 1
+# Time: 285 ns | Active: 0 | State Output:  0 | Done: 0
+# 
+# --- [CASE 4] Input = 9. Expect: Default (Full Sequence) ---
+# Time: 315 ns | Active: 1 | State Output:  2 | Done: 0
+# Time: 325 ns | Active: 1 | State Output:  3 | Done: 0
+# Time: 335 ns | Active: 1 | State Output:  5 | Done: 0
+# Time: 345 ns | Active: 1 | State Output:  2 | Done: 0
+# Time: 355 ns | Active: 1 | State Output:  0 | Done: 0
+# Time: 365 ns | Active: 1 | State Output:  2 | Done: 0
+# Time: 375 ns | Active: 1 | State Output:  0 | Done: 0
+# Time: 385 ns | Active: 1 | State Output:  0 | Done: 1
+# 
+# === HOAN THANH MO PHONG ===
+# Break in Module tb_fsm_student_ID at D:/CE213/TH/Student_ID_SM/tb_fsm_student_ID.v line 98
