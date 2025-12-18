@@ -2,6 +2,8 @@ library verilog;
 use verilog.vl_types.all;
 entity median_filter is
     port(
+        clk             : in     vl_logic;
+        rst_n           : in     vl_logic;
         p1              : in     vl_logic_vector(7 downto 0);
         p2              : in     vl_logic_vector(7 downto 0);
         p3              : in     vl_logic_vector(7 downto 0);
