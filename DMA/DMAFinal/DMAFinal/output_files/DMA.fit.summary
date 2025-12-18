@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Jan 08 20:49:19 2019
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : DMA
+Top-level Entity Name : DMA
+Family : Cyclone II
+Device : EP2C35F672C6
+Timing Models : Final
+Total logic elements : 5,156 / 33,216 ( 16 % )
+    Total combinational functions : 3,125 / 33,216 ( 9 % )
+    Dedicated logic registers : 3,897 / 33,216 ( 12 % )
+Total registers : 3897
+Total pins : 2 / 475 ( < 1 % )
+Total virtual pins : 0
+Total memory bits : 397,824 / 483,840 ( 82 % )
+Embedded Multiplier 9-bit elements : 0 / 70 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
