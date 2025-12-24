@@ -1,7 +1,0 @@
-module DE2_TOP(CLK,SW,KEY,HEX0);
-	input CLK;
-	input [3:0] SW;
-	input [0:0] KEY;
-	output [6:0] HEX0;
-	wire clk_1hz;       // Slow 1Hz Clock
-   wire [3:0] fsm_out; // The ID Digit
