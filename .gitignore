@@ -1,0 +1,12 @@
+#Bỏ qua file PDF 
+HDL-LAB2.pdf 
+#Bỏ qua folder
+db/
+output_files/
+simulation/
+incremental_db/
+#Bỏ qua file ngoài
+*.ddb
+*.bak
+*.rpt
+*.docx
