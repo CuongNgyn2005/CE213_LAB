@@ -1,0 +1,25 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\CE213\TH\DMA\DMAFinal\DMAFinal\software\DMA\obj\default\runtime\sim\mentor
+vSystem_onchip_memory2_1
+!i10b 1
+!s100 zTO1Z7URkl]e?WB>?F=940
+IY=YheTMNk^HEH0UWC:ViT0
+VXYDzgRD8<Vh7n:zBlj>kC1
+Z1 dD:\CE213\TH\DMA\DMAFinal\DMAFinal\software\DMA\obj\default\runtime\sim\mentor
+w1767796794
+8D:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/System_onchip_memory2_1.v
+FD:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/System_onchip_memory2_1.v
+L0 21
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1767797372.210000
+!s107 D:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/System_onchip_memory2_1.v|
+!s90 -reportprogress|300|D:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/System_onchip_memory2_1.v|-work|onchip_memory2_1|
+!s101 -O0
+o-work onchip_memory2_1 -O0
+n@system_onchip_memory2_1

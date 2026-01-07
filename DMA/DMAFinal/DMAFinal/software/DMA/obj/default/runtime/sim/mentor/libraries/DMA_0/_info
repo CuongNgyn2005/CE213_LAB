@@ -1,0 +1,102 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\CE213\TH\DMA\DMAFinal\DMAFinal\software\DMA\obj\default\runtime\sim\mentor
+vcontrol_slave
+I1dlR]3^?M==nSdf:T;n9e3
+VghP8QP?XFIWQ`VWM]T?^R3
+Z1 dD:\CE213\TH\DMA\DMAFinal\DMAFinal\software\DMA\obj\default\runtime\sim\mentor
+Z2 w1767796794
+8D:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/control_slave.v
+FD:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/control_slave.v
+L0 1
+Z3 OV;L;10.1d;51
+r1
+31
+Z4 o-work DMA_0 -O0
+!i10b 1
+!s100 l;TQzD;<V^1TWMak;X:AS2
+!s85 0
+!s108 1767797371.619000
+!s107 D:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/control_slave.v|
+!s90 -reportprogress|300|D:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/control_slave.v|-work|DMA_0|
+!s101 -O0
+vDMAFinal
+I1MdE:iA6T^?Kdnk4O]aL^3
+V33e8ja7iI<4dKehVIQbN^1
+R1
+R2
+8D:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/DMAFinal.v
+FD:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/DMAFinal.v
+L0 1
+R3
+r1
+31
+R4
+n@d@m@a@final
+!i10b 1
+!s100 VCc;J`_I:;kfOkGni_`2`2
+!s85 0
+!s108 1767797371.467000
+!s107 D:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/DMAFinal.v|
+!s90 -reportprogress|300|D:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/DMAFinal.v|-work|DMA_0|
+!s101 -O0
+vFIFO
+ID:e0^F`iK;aUh_LBJ5R?90
+VDi6?8]z;e2I:D7>KOEfDj3
+R1
+R2
+8D:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/FIFO.v
+FD:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/FIFO.v
+L0 1
+R3
+r1
+31
+R4
+n@f@i@f@o
+!i10b 1
+!s100 R7bm^aXFT868eZXUSEfMR1
+!s85 0
+!s108 1767797371.765000
+!s107 D:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/FIFO.v|
+!s90 -reportprogress|300|D:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/FIFO.v|-work|DMA_0|
+!s101 -O0
+vread_master
+ID8cI;LGU8Jn0nP0E<2dTm2
+V5beVoWlmdWNVYOJhROz952
+R1
+R2
+8D:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/read_master.v
+FD:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/read_master.v
+L0 1
+R3
+r1
+31
+R4
+!i10b 1
+!s100 ]Jkf_h=JdDIHF>kKNAbdl1
+!s85 0
+!s108 1767797371.937000
+!s107 D:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/read_master.v|
+!s90 -reportprogress|300|D:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/read_master.v|-work|DMA_0|
+!s101 -O0
+vwrite_master
+!i10b 1
+!s100 V03M>8[KN?9VB@biiTQed1
+IULV5X>;RIdFTn1Ri^OTUn2
+VCVYHnfMIkF7A_za0>oM3S0
+R1
+R2
+8D:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/write_master.v
+FD:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/write_master.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1767797372.076000
+!s107 D:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/write_master.v|
+!s90 -reportprogress|300|D:/CE213/TH/DMA/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/write_master.v|-work|DMA_0|
+!s101 -O0
+R4
