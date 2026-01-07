@@ -1,0 +1,27 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\CE213\Tailieuthuchanh\Lab3\Lab3\DMAFinal\DMAFinal\software\DMA\obj\default\runtime\sim\mentor
+valtera_merlin_master_translator
+DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+!i10b 1
+!s100 4?OGR0ol`iYch8`glnRD_2
+IB>JJ:Mcn3HM;N<kE2J=:63
+V0KIH7<bW[IFhHJBzB4US?0
+!s105 altera_merlin_master_translator_sv_unit
+S1
+Z1 dD:\CE213\Tailieuthuchanh\Lab3\Lab3\DMAFinal\DMAFinal\software\DMA\obj\default\runtime\sim\mentor
+w1767680225
+8D:/CE213/Tailieuthuchanh/Lab3/Lab3/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/altera_merlin_master_translator.sv
+FD:/CE213/Tailieuthuchanh/Lab3/Lab3/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/altera_merlin_master_translator.sv
+L0 30
+Z2 OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1767680402.140000
+!s107 D:/CE213/Tailieuthuchanh/Lab3/Lab3/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/altera_merlin_master_translator.sv|
+!s90 -reportprogress|300|-sv|D:/CE213/Tailieuthuchanh/Lab3/Lab3/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/altera_merlin_master_translator.sv|-work|nios2_qsys_0_instruction_master_translator|
+!s101 -O0
+o-sv -work nios2_qsys_0_instruction_master_translator -O0
