@@ -103,7 +103,7 @@ ACDS_VERSION := 13.0sp1
 # BUILD_NUMBER: 232
 
 SETTINGS_FILE := settings.bsp
-SOPC_FILE := C:/Users/truongnh/Desktop/DMAFinal/System.sopcinfo
+SOPC_FILE := D:/CE213/Tailieuthuchanh/Lab3/Lab3/DMAFinal/DMAFinal/System.sopcinfo
 
 #-------------------------------------------------------------------------------
 #                             TOOL & COMMAND DEFINITIONS

@@ -13,28 +13,25 @@ assign fifo_wr = (~FF_almostfull) & FF_writerequest; //Kiem tra tin hieu FF_writ
 assign fifo_rd = (~FF_empty & FF_readrequest); ////Kiem tra tin hieu FF_readrequest va FF_empty de tien hanh doc
 //--Ghi du lieu vao bo dem FIFO
 
-always @ (posedge iClk)
+always @ (posedge iClk or negedge iReset_n)
 begin
-if(~iReset_n)
+	if(~iReset_n)
 			pos_write <= 8'b00000000;
-	if(fifo_wr)
+	else if(fifo_wr)
 	begin
 		buffer[pos_write] <= FF_data;
 		pos_write <= pos_write + 1;
 	end
-	else
-		pos_write <= pos_write;
+	// Không cần else pos_write <= pos_write vì Verilog tự giữ giá trị
 end
 
 //--tang dia chi doc len 1
-always @ (posedge iClk)
+always @ (posedge iClk or negedge iReset_n)
 	begin
 	if(~iReset_n)
 			pos_read <= 8'b00000000;
 	else if(fifo_rd)
 			pos_read <= pos_read + 1;
-		else 
-			pos_read <= pos_read;
 	end
 //---------------------------------------
 assign compare = pos_write[7] ^ pos_read[7];  //so sanh bit cao cua pos_read va pos_write

@@ -1,0 +1,28 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\CE213\Tailieuthuchanh\Lab3\Lab3\DMAFinal\DMAFinal\software\DMA\obj\default\runtime\sim\mentor
+valtera_avalon_clock_source
+Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+DXx26 altera_avalon_vip_pkgs_lib 13 verbosity_pkg 0 22 B6;3P1TQoGPoLGB7JbFmA0
+!i10b 1
+!s100 R7bhaFgH@38D957DiW1K=2
+IY_8iEd=MbTYA6la;1k49;2
+VLJ9mjBZS9dcR=LGE?Y3HK3
+!s105 altera_avalon_clock_source_sv_unit
+S1
+Z2 dD:\CE213\Tailieuthuchanh\Lab3\Lab3\DMAFinal\DMAFinal\software\DMA\obj\default\runtime\sim\mentor
+Z3 w1767680222
+8D:/CE213/Tailieuthuchanh/Lab3/Lab3/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/altera_avalon_clock_source.sv
+FD:/CE213/Tailieuthuchanh/Lab3/Lab3/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/altera_avalon_clock_source.sv
+L0 23
+Z4 OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1767680405.456000
+!s107 D:/CE213/Tailieuthuchanh/Lab3/Lab3/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/altera_avalon_clock_source.sv|
+!s90 -reportprogress|300|-sv|D:/CE213/Tailieuthuchanh/Lab3/Lab3/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/altera_avalon_clock_source.sv|-L|altera_avalon_vip_pkgs_lib|-work|System_inst_clk_bfm|
+!s101 -O0
+o-sv -L altera_avalon_vip_pkgs_lib -work System_inst_clk_bfm -O0
