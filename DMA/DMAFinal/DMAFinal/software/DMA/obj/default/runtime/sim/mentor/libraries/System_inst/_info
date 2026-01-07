@@ -1,0 +1,25 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\CE213\Tailieuthuchanh\Lab3\Lab3\DMAFinal\DMAFinal\software\DMA\obj\default\runtime\sim\mentor
+vSystem
+!i10b 1
+!s100 VoW5YMBSl2d<iF5FNRa>A3
+I>PTOAhgAcFbgN[:SoY3Pb0
+VIn;7jmHP_f[^odJ2jcFYT2
+Z1 dD:\CE213\Tailieuthuchanh\Lab3\Lab3\DMAFinal\DMAFinal\software\DMA\obj\default\runtime\sim\mentor
+w1767680222
+8D:/CE213/Tailieuthuchanh/Lab3/Lab3/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/System.v
+FD:/CE213/Tailieuthuchanh/Lab3/Lab3/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/System.v
+L0 6
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1767680405.563000
+!s107 D:/CE213/Tailieuthuchanh/Lab3/Lab3/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/System.v|
+!s90 -reportprogress|300|D:/CE213/Tailieuthuchanh/Lab3/Lab3/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/System.v|-work|System_inst|
+!s101 -O0
+o-work System_inst -O0
+n@system

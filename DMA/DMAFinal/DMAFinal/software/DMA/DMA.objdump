@@ -33,41 +33,41 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   7 .debug_pubnames 000006ac  00000000  00000000  000038e8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_info   00008886  00000000  00000000  00003f94  2**0
+  8 .debug_info   000089ee  00000000  00000000  00003f94  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_abbrev 00001fc1  00000000  00000000  0000c81a  2**0
+  9 .debug_abbrev 00001fc1  00000000  00000000  0000c982  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_line   00005a07  00000000  00000000  0000e7db  2**0
+ 10 .debug_line   000058ef  00000000  00000000  0000e943  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_frame  000007f0  00000000  00000000  000141e4  2**2
+ 11 .debug_frame  000007f0  00000000  00000000  00014234  2**2
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_str    00000d2e  00000000  00000000  000149d4  2**0
+ 12 .debug_str    00000d2e  00000000  00000000  00014a24  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_loc    000016eb  00000000  00000000  00015702  2**0
+ 13 .debug_loc    000016eb  00000000  00000000  00015752  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_alt_sim_info 00000010  00000000  00000000  00016df0  2**2
+ 14 .debug_alt_sim_info 00000010  00000000  00000000  00016e40  2**2
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_ranges 00000178  00000000  00000000  00016e00  2**3
+ 15 .debug_ranges 00000178  00000000  00000000  00016e50  2**3
                   CONTENTS, READONLY, DEBUGGING
- 16 .thread_model 00000003  00000000  00000000  0001872b  2**0
+ 16 .thread_model 00000003  00000000  00000000  0001877b  2**0
                   CONTENTS, READONLY
- 17 .cpu          0000000c  00000000  00000000  0001872e  2**0
+ 17 .cpu          0000000c  00000000  00000000  0001877e  2**0
                   CONTENTS, READONLY
- 18 .qsys         00000001  00000000  00000000  0001873a  2**0
+ 18 .qsys         00000001  00000000  00000000  0001878a  2**0
                   CONTENTS, READONLY
- 19 .simulation_enabled 00000001  00000000  00000000  0001873b  2**0
+ 19 .simulation_enabled 00000001  00000000  00000000  0001878b  2**0
                   CONTENTS, READONLY
- 20 .stderr_dev   0000000b  00000000  00000000  0001873c  2**0
+ 20 .stderr_dev   0000000b  00000000  00000000  0001878c  2**0
                   CONTENTS, READONLY
- 21 .stdin_dev    0000000b  00000000  00000000  00018747  2**0
+ 21 .stdin_dev    0000000b  00000000  00000000  00018797  2**0
                   CONTENTS, READONLY
- 22 .stdout_dev   0000000b  00000000  00000000  00018752  2**0
+ 22 .stdout_dev   0000000b  00000000  00000000  000187a2  2**0
                   CONTENTS, READONLY
- 23 .sopc_system_name 00000006  00000000  00000000  0001875d  2**0
+ 23 .sopc_system_name 00000006  00000000  00000000  000187ad  2**0
                   CONTENTS, READONLY
- 24 .quartus_project_dir 00000022  00000000  00000000  00018763  2**0
+ 24 .quartus_project_dir 00000034  00000000  00000000  000187b3  2**0
                   CONTENTS, READONLY
- 25 .sopcinfo     00036f8b  00000000  00000000  00018785  2**0
+ 25 .sopcinfo     00036cf9  00000000  00000000  000187e7  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 00010000 l    d  .entry	00000000 .entry
@@ -400,6 +400,9 @@ int main()
    1012c:	008000b4 	movhi	r2,2
    10130:	108c0b04 	addi	r2,r2,12332
    10134:	10c00035 	stwio	r3,0(r2)
+	//Xu ly dung polling de kiem tra hoan thanh DMA
+	//co do tre 24 chu ky xung clock voi clock dau vao la 50MHz
+	//Co the toi uu hon khi tuy chinh lai code C de tao ra iread nhanh hon hoac xu dung interrupt
 	while(enable)
    10138:	00000706 	br	10158 <main+0x8c>
 	{
@@ -413,11 +416,11 @@ int main()
    10150:	d0200315 	stw	zero,-32756(gp)
 			handlerStatus();
    10154:	001005c0 	call	1005c <handlerStatus>
-	char *b = pdata1;
-	IOWR_32DIRECT(DMA,0*4, (int)pdata0 );
-	IOWR_32DIRECT(DMA, 1*4, (int)pdata1 );
 	IOWR_32DIRECT(DMA, 2*4, length);
 	IOWR_32DIRECT(DMA, 3*4, control);
+	//Xu ly dung polling de kiem tra hoan thanh DMA
+	//co do tre 24 chu ky xung clock voi clock dau vao la 50MHz
+	//Co the toi uu hon khi tuy chinh lai code C de tao ra iread nhanh hon hoac xu dung interrupt
 	while(enable)
    10158:	d0a00317 	ldw	r2,-32756(gp)
    1015c:	1004c03a 	cmpne	r2,r2,zero
@@ -1149,21 +1152,10 @@ int main()
    10c28:	f800283a 	ret
 
 00010c2c <alt_load>:
- * there is no bootloader, so this application is responsible for loading to
- * RAM any sections that are required.
- */  
-
-void alt_load (void)
-{
    10c2c:	defffe04 	addi	sp,sp,-8
    10c30:	dfc00115 	stw	ra,4(sp)
    10c34:	df000015 	stw	fp,0(sp)
    10c38:	d839883a 	mov	fp,sp
-  /* 
-   * Copy the .rwdata section. 
-   */
-
-  alt_load_section (&__flash_rwdata_start, 
    10c3c:	01000074 	movhi	r4,1
    10c40:	21090e04 	addi	r4,r4,9272
    10c44:	01400074 	movhi	r5,1
@@ -1171,12 +1163,6 @@ void alt_load (void)
    10c4c:	01800074 	movhi	r6,1
    10c50:	31890e04 	addi	r6,r6,9272
    10c54:	0010cac0 	call	10cac <alt_load_section>
-
-  /*
-   * Copy the exception handler.
-   */
-
-  alt_load_section (&__flash_exceptions_start, 
    10c58:	01000074 	movhi	r4,1
    10c5c:	21000804 	addi	r4,r4,32
    10c60:	01400074 	movhi	r5,1
@@ -1184,12 +1170,6 @@ void alt_load (void)
    10c68:	01800074 	movhi	r6,1
    10c6c:	31800804 	addi	r6,r6,32
    10c70:	0010cac0 	call	10cac <alt_load_section>
-
-  /*
-   * Copy the .rodata section.
-   */
-
-  alt_load_section (&__flash_rodata_start, 
    10c74:	01000074 	movhi	r4,1
    10c78:	21083b04 	addi	r4,r4,8428
    10c7c:	01400074 	movhi	r5,1
@@ -1197,16 +1177,8 @@ void alt_load (void)
    10c84:	01800074 	movhi	r6,1
    10c88:	31884c04 	addi	r6,r6,8496
    10c8c:	0010cac0 	call	10cac <alt_load_section>
-  
-  /*
-   * Now ensure that the caches are in synch.
-   */
-  
-  alt_dcache_flush_all();
    10c90:	001135c0 	call	1135c <alt_dcache_flush_all>
-  alt_icache_flush_all();
    10c94:	00115800 	call	11580 <alt_icache_flush_all>
-}
    10c98:	e037883a 	mov	sp,fp
    10c9c:	dfc00117 	ldw	ra,4(sp)
    10ca0:	df000017 	ldw	fp,0(sp)
@@ -1214,27 +1186,16 @@ void alt_load (void)
    10ca8:	f800283a 	ret
 
 00010cac <alt_load_section>:
- */
-
-static void ALT_INLINE alt_load_section (alt_u32* from, 
-                                         alt_u32* to, 
-                                         alt_u32* end)
-{
    10cac:	defffc04 	addi	sp,sp,-16
    10cb0:	df000315 	stw	fp,12(sp)
    10cb4:	df000304 	addi	fp,sp,12
    10cb8:	e13ffd15 	stw	r4,-12(fp)
    10cbc:	e17ffe15 	stw	r5,-8(fp)
    10cc0:	e1bfff15 	stw	r6,-4(fp)
-  if (to != from)
    10cc4:	e0fffe17 	ldw	r3,-8(fp)
    10cc8:	e0bffd17 	ldw	r2,-12(fp)
    10ccc:	18800e26 	beq	r3,r2,10d08 <alt_load_section+0x5c>
-  {
-    while( to != end )
    10cd0:	00000a06 	br	10cfc <alt_load_section+0x50>
-    {
-      *to++ = *from++;
    10cd4:	e0bffd17 	ldw	r2,-12(fp)
    10cd8:	10c00017 	ldw	r3,0(r2)
    10cdc:	e0bffe17 	ldw	r2,-8(fp)
@@ -1245,20 +1206,9 @@ static void ALT_INLINE alt_load_section (alt_u32* from,
    10cf0:	e0bffd17 	ldw	r2,-12(fp)
    10cf4:	10800104 	addi	r2,r2,4
    10cf8:	e0bffd15 	stw	r2,-12(fp)
-                                         alt_u32* to, 
-                                         alt_u32* end)
-{
-  if (to != from)
-  {
-    while( to != end )
    10cfc:	e0fffe17 	ldw	r3,-8(fp)
    10d00:	e0bfff17 	ldw	r2,-4(fp)
    10d04:	18bff31e 	bne	r3,r2,10cd4 <alt_load_section+0x28>
-    {
-      *to++ = *from++;
-    }
-  }
-}
    10d08:	e037883a 	mov	sp,fp
    10d0c:	df000017 	ldw	fp,0(sp)
    10d10:	dec00104 	addi	sp,sp,4
@@ -1987,23 +1937,12 @@ static int alt_dev_null_write (alt_fd* fd, const char* ptr, int len)
    113a0:	f800283a 	ret
 
 000113a4 <alt_dev_llist_insert>:
-/*
- *
- */
-
-int alt_dev_llist_insert (alt_dev_llist* dev, alt_llist* list)
-{
    113a4:	defff904 	addi	sp,sp,-28
    113a8:	dfc00615 	stw	ra,24(sp)
    113ac:	df000515 	stw	fp,20(sp)
    113b0:	df000504 	addi	fp,sp,20
    113b4:	e13ffd15 	stw	r4,-12(fp)
    113b8:	e17ffe15 	stw	r5,-8(fp)
-  /*
-   * check that the device exists, and that it has a valid name.
-   */
-
-  if (!dev || !dev->name)
    113bc:	e0bffd17 	ldw	r2,-12(fp)
    113c0:	1005003a 	cmpeq	r2,r2,zero
    113c4:	1000041e 	bne	r2,zero,113d8 <alt_dev_llist_insert+0x34>
@@ -2011,55 +1950,33 @@ int alt_dev_llist_insert (alt_dev_llist* dev, alt_llist* list)
    113cc:	10800217 	ldw	r2,8(r2)
    113d0:	1004c03a 	cmpne	r2,r2,zero
    113d4:	1000071e 	bne	r2,zero,113f4 <alt_dev_llist_insert+0x50>
-  {
-    ALT_ERRNO = EINVAL;
    113d8:	00114580 	call	11458 <alt_get_errno>
    113dc:	1007883a 	mov	r3,r2
    113e0:	00800584 	movi	r2,22
    113e4:	18800015 	stw	r2,0(r3)
-    return -EINVAL;
    113e8:	00bffa84 	movi	r2,-22
    113ec:	e0bfff15 	stw	r2,-4(fp)
    113f0:	00001306 	br	11440 <alt_dev_llist_insert+0x9c>
-  
-  /*
-   * register the device.
-   */
-  
-  alt_llist_insert(list, &dev->llist);
    113f4:	e0fffd17 	ldw	r3,-12(fp)
    113f8:	e0bffe17 	ldw	r2,-8(fp)
    113fc:	e0bffb15 	stw	r2,-20(fp)
    11400:	e0fffc15 	stw	r3,-16(fp)
- */
-
-static ALT_INLINE void ALT_ALWAYS_INLINE alt_llist_insert(alt_llist* list, 
-                alt_llist* entry)
-{
-  entry->previous = list;
    11404:	e0fffc17 	ldw	r3,-16(fp)
    11408:	e0bffb17 	ldw	r2,-20(fp)
    1140c:	18800115 	stw	r2,4(r3)
-  entry->next     = list->next;
    11410:	e0bffb17 	ldw	r2,-20(fp)
    11414:	10c00017 	ldw	r3,0(r2)
    11418:	e0bffc17 	ldw	r2,-16(fp)
    1141c:	10c00015 	stw	r3,0(r2)
-
-  list->next->previous = entry;
    11420:	e0bffb17 	ldw	r2,-20(fp)
    11424:	10c00017 	ldw	r3,0(r2)
    11428:	e0bffc17 	ldw	r2,-16(fp)
    1142c:	18800115 	stw	r2,4(r3)
-  list->next           = entry;
    11430:	e0fffb17 	ldw	r3,-20(fp)
    11434:	e0bffc17 	ldw	r2,-16(fp)
    11438:	18800015 	stw	r2,0(r3)
-
-  return 0;  
    1143c:	e03fff15 	stw	zero,-4(fp)
    11440:	e0bfff17 	ldw	r2,-4(fp)
-}
    11444:	e037883a 	mov	sp,fp
    11448:	dfc00117 	ldw	ra,4(sp)
    1144c:	df000017 	ldw	fp,0(sp)
@@ -2067,17 +1984,10 @@ static ALT_INLINE void ALT_ALWAYS_INLINE alt_llist_insert(alt_llist* list,
    11454:	f800283a 	ret
 
 00011458 <alt_get_errno>:
-#undef errno
-
-extern int errno;
-
-static ALT_INLINE int* alt_get_errno(void)
-{
    11458:	defffd04 	addi	sp,sp,-12
    1145c:	dfc00215 	stw	ra,8(sp)
    11460:	df000115 	stw	fp,4(sp)
    11464:	df000104 	addi	fp,sp,4
-  return ((alt_errno) ? alt_errno() : &errno);
    11468:	00800074 	movhi	r2,1
    1146c:	10890d04 	addi	r2,r2,9268
    11470:	10800017 	ldw	r2,0(r2)
@@ -2093,7 +2003,6 @@ static ALT_INLINE int* alt_get_errno(void)
    11498:	1089d004 	addi	r2,r2,10048
    1149c:	e0bfff15 	stw	r2,-4(fp)
    114a0:	e0bfff17 	ldw	r2,-4(fp)
-}
    114a4:	e037883a 	mov	sp,fp
    114a8:	dfc00117 	ldw	ra,4(sp)
    114ac:	df000017 	ldw	fp,0(sp)
@@ -2101,35 +2010,19 @@ static ALT_INLINE int* alt_get_errno(void)
    114b4:	f800283a 	ret
 
 000114b8 <_do_ctors>:
-/*
- * Run the C++ static constructors.
- */
-
-void _do_ctors(void)
-{
    114b8:	defffd04 	addi	sp,sp,-12
    114bc:	dfc00215 	stw	ra,8(sp)
    114c0:	df000115 	stw	fp,4(sp)
    114c4:	df000104 	addi	fp,sp,4
-  constructor* ctor;
-
-  for (ctor = &__CTOR_END__[-1]; ctor >= __CTOR_LIST__; ctor--)
    114c8:	00bfff04 	movi	r2,-4
    114cc:	00c00074 	movhi	r3,1
    114d0:	18c83b04 	addi	r3,r3,8428
    114d4:	1885883a 	add	r2,r3,r2
    114d8:	e0bfff15 	stw	r2,-4(fp)
    114dc:	00000606 	br	114f8 <_do_ctors+0x40>
-        (*ctor) (); 
    114e0:	e0bfff17 	ldw	r2,-4(fp)
    114e4:	10800017 	ldw	r2,0(r2)
    114e8:	103ee83a 	callr	r2
-
-void _do_ctors(void)
-{
-  constructor* ctor;
-
-  for (ctor = &__CTOR_END__[-1]; ctor >= __CTOR_LIST__; ctor--)
    114ec:	e0bfff17 	ldw	r2,-4(fp)
    114f0:	10bfff04 	addi	r2,r2,-4
    114f4:	e0bfff15 	stw	r2,-4(fp)
@@ -2137,8 +2030,6 @@ void _do_ctors(void)
    114fc:	00800074 	movhi	r2,1
    11500:	10883a04 	addi	r2,r2,8424
    11504:	18bff62e 	bgeu	r3,r2,114e0 <_do_ctors+0x28>
-        (*ctor) (); 
-}
    11508:	e037883a 	mov	sp,fp
    1150c:	dfc00117 	ldw	ra,4(sp)
    11510:	df000017 	ldw	fp,0(sp)
@@ -2146,35 +2037,19 @@ void _do_ctors(void)
    11518:	f800283a 	ret
 
 0001151c <_do_dtors>:
-/*
- * Run the C++ static destructors.
- */
-
-void _do_dtors(void)
-{
    1151c:	defffd04 	addi	sp,sp,-12
    11520:	dfc00215 	stw	ra,8(sp)
    11524:	df000115 	stw	fp,4(sp)
    11528:	df000104 	addi	fp,sp,4
-  destructor* dtor;
-
-  for (dtor = &__DTOR_END__[-1]; dtor >= __DTOR_LIST__; dtor--)
    1152c:	00bfff04 	movi	r2,-4
    11530:	00c00074 	movhi	r3,1
    11534:	18c83b04 	addi	r3,r3,8428
    11538:	1885883a 	add	r2,r3,r2
    1153c:	e0bfff15 	stw	r2,-4(fp)
    11540:	00000606 	br	1155c <_do_dtors+0x40>
-        (*dtor) (); 
    11544:	e0bfff17 	ldw	r2,-4(fp)
    11548:	10800017 	ldw	r2,0(r2)
    1154c:	103ee83a 	callr	r2
-
-void _do_dtors(void)
-{
-  destructor* dtor;
-
-  for (dtor = &__DTOR_END__[-1]; dtor >= __DTOR_LIST__; dtor--)
    11550:	e0bfff17 	ldw	r2,-4(fp)
    11554:	10bfff04 	addi	r2,r2,-4
    11558:	e0bfff15 	stw	r2,-4(fp)
@@ -2182,8 +2057,6 @@ void _do_dtors(void)
    11560:	00800074 	movhi	r2,1
    11564:	10883b04 	addi	r2,r2,8428
    11568:	18bff62e 	bgeu	r3,r2,11544 <_do_dtors+0x28>
-        (*dtor) (); 
-}
    1156c:	e037883a 	mov	sp,fp
    11570:	dfc00117 	ldw	ra,4(sp)
    11574:	df000017 	ldw	fp,0(sp)

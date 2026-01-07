@@ -1,0 +1,28 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\CE213\Tailieuthuchanh\Lab3\Lab3\DMAFinal\DMAFinal\software\DMA\obj\default\runtime\sim\mentor
+vSystem_irq_mapper
+DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+!i10b 1
+!s100 :i=<66_j`6@QhfGY6QZK72
+IOdhZW2TT56;D3o@KeS^482
+V1=BDAUHT9BTaMXH@TZh9J3
+!s105 System_irq_mapper_sv_unit
+S1
+Z1 dD:\CE213\Tailieuthuchanh\Lab3\Lab3\DMAFinal\DMAFinal\software\DMA\obj\default\runtime\sim\mentor
+w1767680226
+8D:/CE213/Tailieuthuchanh/Lab3/Lab3/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/System_irq_mapper.sv
+FD:/CE213/Tailieuthuchanh/Lab3/Lab3/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/System_irq_mapper.sv
+L0 31
+Z2 OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1767680397.887000
+!s107 D:/CE213/Tailieuthuchanh/Lab3/Lab3/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/System_irq_mapper.sv|
+!s90 -reportprogress|300|-sv|D:/CE213/Tailieuthuchanh/Lab3/Lab3/DMAFinal/DMAFinal/System/testbench/System_tb/simulation/submodules/System_irq_mapper.sv|-work|irq_mapper|
+!s101 -O0
+o-sv -work irq_mapper -O0
+n@system_irq_mapper
