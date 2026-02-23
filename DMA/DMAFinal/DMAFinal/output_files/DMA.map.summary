@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Jan 07 21:38:23 2026
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : DMA
+Top-level Entity Name : FIFO
+Family : Cyclone II
+Total logic elements : 3,285
+    Total combinational functions : 1,100
+    Dedicated logic registers : 2,790
+Total registers : 2790
+Total pins : 70
+Total virtual pins : 0
+Total memory bits : 33,792
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

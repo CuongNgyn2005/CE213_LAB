@@ -1,0 +1,39 @@
+# Reading D:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do ImageProcessing_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/CE213/TH/ImageProcessing {D:/CE213/TH/ImageProcessing/median_filter.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module median_filter
+# 
+# Top level modules:
+# 	median_filter
+# 
+vlog -reportprogress 300 -work work D:/CE213/TH/ImageProcessing/tb_median_filter.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_median_filter
+# 
+# Top level modules:
+# 	tb_median_filter
+vsim -voptargs=+acc work.tb_median_filter
+# vsim -voptargs=+acc work.tb_median_filter 
+# Loading work.tb_median_filter
+# Loading work.median_filter
+add wave -position insertpoint sim:/tb_median_filter/*
+run -all
+# Processing Complete. Output saved to D:/CE213/TH/ImageProcessing/pic_output.txt
+# Processing Complete.
+# Total Active Pixels Processed:      236256
+# Total Clock Cycles Used:      945024
+# ** Note: $finish    : D:/CE213/TH/ImageProcessing/tb_median_filter.v(102)
+#    Time: 9450256 ns  Iteration: 0  Instance: /tb_median_filter
+# 1
+# Break in Module tb_median_filter at D:/CE213/TH/ImageProcessing/tb_median_filter.v line 102

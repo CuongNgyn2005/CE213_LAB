@@ -1,12 +1,5 @@
 #Bỏ qua file PDF 
 HDL-LAB2.pdf 
-#Bỏ qua folder
-db/
-output_files/
-simulation/
-incremental_db/
+23520200_NguyenHoangQuocCuong.pdf
 #Bỏ qua file ngoài
-*.ddb
-*.bak
-*.rpt
-*.docx
+*.metadata

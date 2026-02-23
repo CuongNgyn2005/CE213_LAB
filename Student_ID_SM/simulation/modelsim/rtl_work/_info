@@ -1,0 +1,46 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\CE213\TH\Student_ID_SM\simulation\modelsim
+vfsm_student_ID
+Ikn_kn<JW:YNXD62Jj=ef81
+V]5`JIdc61ENc4c1D:?A<M1
+Z1 dD:\CE213\TH\Student_ID_SM\simulation\modelsim
+w1765234936
+8D:/CE213/TH/Student_ID_SM/fsm_student_ID.v
+FD:/CE213/TH/Student_ID_SM/fsm_student_ID.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+31
+o-vlog01compat -work work -O0
+nfsm_student_@i@d
+!i10b 1
+!s100 W02[=G;kJH^V?@fZ1S:2f2
+!s85 0
+!s108 1765242347.922000
+!s107 D:/CE213/TH/Student_ID_SM/fsm_student_ID.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/CE213/TH/Student_ID_SM|D:/CE213/TH/Student_ID_SM/fsm_student_ID.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/CE213/TH/Student_ID_SM -O0
+vtb_fsm_student_ID
+!i10b 1
+!s100 AiWnzW:eWZFggMdSO;fU@3
+I7dACZHeOn@POk[5MN6kjD2
+V6oNiJn1jc6c9bZI>^Smm73
+R1
+w1765236246
+8D:/CE213/TH/Student_ID_SM/tb_fsm_student_ID.v
+FD:/CE213/TH/Student_ID_SM/tb_fsm_student_ID.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1765242361.467000
+!s107 D:/CE213/TH/Student_ID_SM/tb_fsm_student_ID.v|
+!s90 -reportprogress|300|-work|work|D:/CE213/TH/Student_ID_SM/tb_fsm_student_ID.v|
+!s101 -O0
+o-work work -O0
+ntb_fsm_student_@i@d

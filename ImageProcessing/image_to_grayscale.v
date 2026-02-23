@@ -1,18 +1,10 @@
-// File: image_to_grayscale.v
-// Description: Convert 8-bit RGB pixel to 8-bit grayscale using fixed-point luminance approximation.
-// Grayscale = (0.299 * R) + (0.587 * G) + (0.114 * B)
-// Approximation: (77*R + 150*G + 29*B) >> 8
-
-module image_to_grayscale (
-    input  wire        clk,        // optional for pipelining; used here to register output
-    input  wire        rst_n,      // active-low reset
-    input  wire [7:0]  r_in,       // Red channel (0-255)
-    input  wire [7:0]  g_in,       // Green channel (0-255)
-    input  wire [7:0]  b_in,       // Blue channel (0-255)
-    input  wire        in_valid,   // input pixel valid
-    output reg  [7:0]  gray_out,   // Grayscale output (0-255)
-    output reg         out_valid   // output valid (registered)
-);
+module image_to_grayscale (clk,rst_n,r_in,g_in,b_in,in_valid,gray_out,out_valid,brightness);
+    input clk,rst_n;      
+    input [7:0]r_in,g_in,b_in;       //RGB value 8-bit
+    input  in_valid;   // input pixel valid
+    output reg [7:0]gray_out;   // Grayscale output (0-255)
+    output reg out_valid;  // output valid (registered)
+	 input  wire [7:0]  brightness;
 
     // Use wider intermediates to avoid overflow during multiply-accumulate.
     // 8-bit * 8-bit = 16-bit; sum fits in 18 bits before shift.
@@ -21,18 +13,21 @@ module image_to_grayscale (
     wire [15:0] b_mul = b_in * 8'd29;   // 0.114 * 256 ≈ 29
 
     wire [17:0] acc = {2'b00, r_mul} + {2'b00, g_mul} + {2'b00, b_mul};
-
-    // Optional rounding: add 0.5 LSB before shifting
     wire [17:0] acc_rounded = acc + 18'd128;
+    wire [7:0] gray_base = acc_rounded[17:10];
+	 // --- THÊM LOGIC CHỈNH ĐỘ SÁNG ---
+    // Mở rộng lên 9 bit hoặc 10 bit để phát hiện tràn số khi cộng brightness
+    wire [9:0] gray_bright = {2'b00, gray_base} + {2'b00, brightness};
 
-    wire [7:0] gray_comb = acc_rounded[17:10]; // equivalent to >> 8 with rounding
+    // CLAMPING: Nếu > 255 thì giữ ở 255
+    wire [7:0] gray_final = (gray_bright > 10'd255) ? 8'd255 : gray_bright[7:0];
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             gray_out  <= 8'd0;
             out_valid <= 1'b0;
         end else begin
-            gray_out  <= gray_comb;
+            gray_out  <= gray_final;
             out_valid <= in_valid;
         end
     end

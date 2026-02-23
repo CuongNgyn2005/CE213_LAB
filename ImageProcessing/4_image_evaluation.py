@@ -7,7 +7,7 @@ from matplotlib import rcParams
 rcParams['font.family'] = 'Times New Roman'
 
 IMG_REF = "baitap1_anhgoc.bmp"
-IMG_OUT = "cuong_output.bmp"
+IMG_OUT = "median_result.bmp"
 
 # 1. Đọc ảnh grayscale
 img_ref = Image.open(IMG_REF).convert("L")

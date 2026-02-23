@@ -8,8 +8,8 @@ module tb_median_filter();
     parameter SIZE   = WIDTH * HEIGHT;
 
     // Settings
-    parameter INPUT_PATH  = "D:/CE213/LAB/CE213_LAB/ImageProcessing/input.hex";
-    parameter OUTPUT_PATH = "D:/CE213/LAB/CE213_LAB/ImageProcessing/pic_output.txt";
+    parameter INPUT_PATH  = "D:/CE213/TH/ImageProcessing/pic_input.txt";
+    parameter OUTPUT_PATH = "D:/CE213/TH/ImageProcessing/pic_output.txt";
 
     // Signals
     reg  clk;
@@ -17,8 +17,8 @@ module tb_median_filter();
     reg  [7:0] img_mem [0:SIZE-1];
     reg  [7:0] p1, p2, p3, p4, p5, p6, p7, p8, p9;
     wire [7:0] out_pixel;
- 
-    integer file_read, file_write, i, x, y, scan_status;
+	 
+	 integer file_write, x, y,total_cycles;
 
     // Instantiate the PIPELINED DUT
     median_filter uut (
@@ -34,11 +34,11 @@ module tb_median_filter();
     initial begin
         clk = 0;
         forever #5 clk = ~clk;
-    end
 
+    end
     // 2. Main Test Process
     initial begin
-        // Read input image (Same as your original code)
+			total_cycles = 0;
         $readmemh(INPUT_PATH, img_mem);
 
         // Open Output File
@@ -83,14 +83,13 @@ module tb_median_filter();
                     repeat(3) @(posedge clk);
 
                     // Capture Output
-                    #1; // Small hold time to read stable data
+                    #1; 
                     $fwrite(file_write, "%2h\n", out_pixel);
                 end
             end
         end
-
         $fclose(file_write);
         $display("Processing Complete. Output saved to %s", OUTPUT_PATH);
-        $finish;
-    end
+		  $finish;
+	 end
 endmodule 
